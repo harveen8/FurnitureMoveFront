@@ -11,12 +11,13 @@ export class HouseComponent implements OnInit {
 
   constructor(public serv: ServicesService) { }
 
-  houseList:Array<House>=[];
+
 
   houseName: string="";
   houseSize: number=0;
   message1: string="";
 
+  houseList:Array<House>=[];
   furnitureName: string="";
   furnitureSize: number=0;
   message2: string="";
