@@ -1,19 +1,34 @@
-<h3>Add House</h3>
-<input type="text" [(ngModel)]="houseName">
-<input type="number" [(ngModel)]="houseSize">
-<button (click)="addHouse()">Add House</button>
-<p>{{message1}}</p>
+<div id="body">
+    <div class="section">
+        <h3>Add House</h3>
+        <h6>House Name:</h6>
+        <input type="text" [(ngModel)]="houseName">
+        <h6>House Size:</h6>
+        <input type="number" [(ngModel)]="houseSize">
+        <button (click)="addHouse()">Add House</button>
+        <p>{{message1}}</p>
+    </div>
 
-<h3>Add Furniture</h3>
-<select id="houseSearch">
-    <option *ngFor="let house of houseList" value={{house.houseId}}>{{house.name}}</option>
-</select>
-<input type="text" [(ngModel)]="furnitureName">
-<input type="number" [(ngModel)]="furnitureSize">
-<button (click)="addFurniture()">Add Furniture</button>
-<p>{{message2}}</p>
+    <div class="section">
+        <h3>Add Furniture</h3>
+        <h6>House Name:</h6>
+        <select id="houseSearch">
+            <option *ngFor="let house of houseList" value={{house.houseId}} id={{house.name}}>{{house.name}}</option>
+        </select>
+        <h6>Furniture Name:</h6>
+        <input type="text" [(ngModel)]="furnitureName">
+        <h6>Furniture Size:</h6>
+        <input type="number" [(ngModel)]="furnitureSize">
+        <button  (click)="addFurniture()">Add Furniture</button>
+        <p>{{message2}}</p>
+    </div>
 
-<h3>Search Furniture</h3>
-<input type="text" [(ngModel)]="furnitureSearch">
-<button (click)="searchFurniture()">Search Furniture</button>
-<p>{{message3}}</p>
+    <div class="section">
+        <h3>Search Furniture</h3>
+        <h6>Furniture Name:</h6>
+
+        <input type="text" [(ngModel)]="furnitureSearch">
+        <button (click)="searchFurniture()">Search Furniture</button>
+        <p>{{message3}}</p>
+    </div>
+</div>

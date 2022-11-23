@@ -48,10 +48,8 @@ export class HouseComponent implements OnInit {
       this.serv.getMaxSquareFootage(houseId).subscribe(maxSqLeft=>{
         if(this.furnitureSize<=maxSqLeft){
           this.serv.addFurniture(this.furnitureSize,this.furnitureName, houseId);
-          this.serv.getHouseById(houseId).subscribe(data=>{
-            this.message2=this.furnitureName+ "with size "+this.furnitureSize+ "sqft added to house "+data.name+"!";
-          })
-        }else{
+          this.message2=this.furnitureName +" with size "+this.furnitureSize+" sqft added!"
+          }else{
           this.message2="Furniture size too large!";
         }
       })
@@ -66,6 +64,9 @@ export class HouseComponent implements OnInit {
       this.serv.ofFurnitureType(this.furnitureSearch).subscribe(nums=>{
         this.message3="There are "+nums+" of type "+this.furnitureSearch+"."
       })
+    }else{
+      this.message3="Please fill parameters correctly!"
+
     }
   }
 
