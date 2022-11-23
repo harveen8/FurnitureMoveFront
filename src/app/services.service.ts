@@ -16,28 +16,25 @@ export class ServicesService {
     return this.http.get<House>(this.server+"house/"+num);
   }
 
-  public addHouse(squareFeet: number, name: string): Observable<House>{
-    return this.http.post<House>(this.server+"/house",{squareFeet:squareFeet, name:name} )
+  public addHouse(squareFeet: number, name: string){
+     this.http.post<House>(this.server+"/house",{squareFeet:squareFeet, name:name}).subscribe(data=>{console.log(data);});
   }
 
   public getAllHouses(): Observable<Array<House>>{
     return this.http.get<Array<House>>(this.server+"/house");
   }
 
-  public getMaxSquareFootage(num: number): number{
-    let sqfeet=0;
-    this.http.get<number>(this.server+"/house/max/"+num).subscribe(data=>{sqfeet=data;});
-    return sqfeet;
+  public getMaxSquareFootage(num: number): Observable<number>{
+    return this.http.get<number>(this.server+"/house/max/"+num);
   }
 
-  public addFurniture(squareFeet: number, name: string, houseId: number): Observable<Furniture>{
-    return this.http.post<Furniture>(this.server+"/furniture/"+houseId, {squareFeet:squareFeet, name:name})
+  public addFurniture(squareFeet: number, name: string, houseId: number){
+     this.http.post<Furniture>(this.server+"/furniture/"+houseId, {squareFeet:squareFeet, name:name}).subscribe(data=>{console.log(data);});
   }
 
-  public ofFurnitureType(name:string): number{
-    let occurences=0;
-    this.http.get<number>(this.server+"/furniture"+name).subscribe(data=>{occurences=data;});
-    return occurences;
+  public ofFurnitureType(name:string): Observable<number>{
+
+   return this.http.get<number>(this.server+"/furniture/"+name);
   }
 
 
