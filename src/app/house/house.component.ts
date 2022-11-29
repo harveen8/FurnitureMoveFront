@@ -41,6 +41,7 @@ export class HouseComponent implements OnInit {
     this.serv.getAllHouses().subscribe(data=>{this.houseList=data})
     this.serv.getAllHouses().subscribe(data=>{this.houseList=data})
     this.serv.getAllHouses().subscribe(data=>{this.houseList=data})
+    this.serv.getAllHouses().subscribe(data=>{this.houseList=data})
   }
 
   addFurniture(){

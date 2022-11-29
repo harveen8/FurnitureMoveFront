@@ -29,14 +29,14 @@ button{
     margin:4px;
    
 }
-button:hover{
-    background-color: black;
+button:hover,input:hover,select:hover{
+    background-color: rgba(102, 0, 255, 0.727);
 }
 #body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.675);
+    height: 100%;
 }
 p{
     color:red;
